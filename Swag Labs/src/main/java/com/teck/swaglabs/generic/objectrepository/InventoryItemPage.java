@@ -20,8 +20,6 @@ public class InventoryItemPage extends WebDriverUtility {
 	@FindBy(id = "shopping_cart_container")
 	private WebElement cartContainerBtn;
 
-	@FindBy(xpath ="//select[@data-test='product-sort-container']")
-	private WebElement productSortContainer;
 	
 	//	Rule 3:Initialization
 	
@@ -40,10 +38,7 @@ public class InventoryItemPage extends WebDriverUtility {
 		return remove;
 	}
 
-	public WebElement getproductSortContainer() {
-		
-		return productSortContainer;
-	}
+	
 	
 	public WebElement getCartContainerBtn() {
 		
@@ -54,11 +49,7 @@ public class InventoryItemPage extends WebDriverUtility {
 		mouseMoveOnElement(driver, cartContainerBtn);
 		cartContainerBtn.click();
 	}
-	
-	public void navigateToProductSortContainer() {
-		productSortContainer.click();
-		select(productSortContainer,1);
-	}
+
 	
 }
 	

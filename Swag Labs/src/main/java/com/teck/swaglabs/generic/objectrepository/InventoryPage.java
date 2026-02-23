@@ -26,6 +26,10 @@ public class InventoryPage extends WebDriverUtility  	  {
 	
 	@FindBy(xpath = "//option[text()='Price (low to high)']/.")
 	private WebElement rangelowtohigh;
+	
+	@FindBy(xpath ="//select[@data-test='product-sort-container']")
+	private WebElement productSortContainer;
+	
 
 	//	Rule 3:Initialization
 	
@@ -38,6 +42,11 @@ public class InventoryPage extends WebDriverUtility  	  {
 		
 		return CartContainerBtn;
 	}
+	
+	public WebElement getproductSortContainer() {
+		
+		return productSortContainer;
+	}
 	public String addProductToCart(WebDriver driver,String Productname){
 
 		WebElement prod=driver.findElement(By.xpath("//div[.='"+Productname+"']"));
@@ -46,5 +55,11 @@ public class InventoryPage extends WebDriverUtility  	  {
 		return ProductDetails;
 		
 	}
+
+	public void navigateToProductSortContainer() {
+		productSortContainer.click();
+		select(productSortContainer,1);
+	}
+	
 
 }
